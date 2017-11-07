@@ -113,7 +113,7 @@ static int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
 		char site[20];
 		int status=0,count=0;
 		FILE * fp=fopen(list,"r");
-	    while(1){
+	        while(1){
 		for(int i=0;;i++){
 		        line[i]=DATA[current];
 			current++;
@@ -141,9 +141,9 @@ static int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
 								printf("this is a bad homepage@@@@@@@@@@@@@@@@@@@@\n");
 								return nfq_set_verdict(qh,id,NF_DROP,0,NULL);
 							}
-							i=0;status=0;continue;
+							count=0;status=0;continue;
 						}
-						site[i]=tmp2;i++;
+						site[count]=tmp2;count++;
 					}
 				    }	
 
